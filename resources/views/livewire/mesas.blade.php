@@ -13,7 +13,6 @@
                                         {{ $tables->name }}</h1>
                                 </a>
                         </article>
-
                     </li>
                 @endforeach
             </ul>
@@ -31,6 +30,8 @@
     @endif
 
 </div>
+
+{{-- SOLO MOBIL --}}
 <div class="md:hidden py-20">
     <div class="flex items-center bg-opacity-70 bg-amber-400 rounded-lg shadow-lg px-6 py-4 mb-4">
         <h1 class="text-xl uppercase font-semibold font-sans text-white text-left">

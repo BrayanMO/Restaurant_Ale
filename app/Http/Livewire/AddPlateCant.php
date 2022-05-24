@@ -12,7 +12,7 @@ class AddPlateCant extends Component
 
     public $qty = 1;
 
-    protected $listerners = ['render'];
+    protected $listeners = ['render'];
 
     public function mount()
     {

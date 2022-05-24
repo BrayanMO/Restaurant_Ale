@@ -21,6 +21,7 @@ Route::get('/', WelcomeController::class);
 
 
 Route::get('mesas/{mesa}', [MesaController::class, 'show'])->name('mesas.show');
+
 Route::get('orders/create', function($id){
 
 })->name('orders.create');

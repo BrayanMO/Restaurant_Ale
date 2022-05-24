@@ -10,7 +10,7 @@ class Search extends Component
 {
 
     public $search;
-    public $select_price;
+    public $select_price = 1;
     public $open = false;
     public function updatedSearch($value)
     {
@@ -23,13 +23,34 @@ class Search extends Component
 
     public function addItem(Plate $id)
     {
-        Cart::add([
-            'id' => $id->id,
-            'name' => $id->name,
-            'qty' => 1,
-            'price' => $id->price_small,
-            'weight' => 550
-        ]);
+        // && $this->id->subcategory->category->id == 4
+        if ($this->select_price == 1 || $id->subcategory->category->id == 4 ) {
+            Cart::add([
+                'id' => rand(5, 15453423),
+                'name' => $id->name,
+                'qty' => 1,
+                'price' => $id->price_small,
+                'weight' => 550
+            ]);
+        } elseif($this->select_price == 2) {
+            Cart::add([
+                'id' => rand(5, 23423423),
+                'name' => $id->name,
+                'qty' => 1,
+                'price' => $id->price_medium,
+                'weight' => 550
+            ]);
+        }elseif($this->select_price == 3){
+            Cart::add([
+                'id' => rand(5, 2342342),
+                'name' => $id->name,
+                'qty' => 1,
+                'price' => $id->price_family,
+                'weight' => 550
+            ]);
+        }
+        $this->emitTo('add-plate-cant', 'render');
+        $this->emitTo('tabla-items', 'render');
         $this->emit('render');
         $this->open = false;
         $this->search = '';
@@ -40,7 +61,7 @@ class Search extends Component
         if ($this->search) {
             $plates = Plate::where('name', 'LIKE', '%' . $this->search . '%')
                 ->where('status', 2)
-                ->take(8)
+                ->take(4)
                 ->get();
         } else {
             $plates = [];

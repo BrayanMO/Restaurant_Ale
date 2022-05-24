@@ -1,7 +1,8 @@
 <div class="container pb-4">
     <x-table-responsive>
-        <div class="px-6 py-4 bg-white text-center">
-            <h1 class="text-lg font-semibold text-gray-700">Comanda de Pedido</h1>
+        <div class="flex items-center md:justify-center px-6 py-3 bg-white text-left md:text-center">
+            <h1 class="text-lg font-semibold text-gray-700 mr-1">Comanda de Pedido</h1>
+            <x-pedido class="ml-4" size="25"/>
         </div>
 
         @if (Cart::count())
@@ -32,9 +33,10 @@
                             <td class="px-6 py-4 whitespace-nowrap">
                                 <div class="flex items-center">
                                     <div class="ml-4">
-                                        <button class="text-sm font-medium text-gray-900">
+                                        <i class="far fa-check-circle text-green-500"></i>
+                                        <a class="text-sm font-medium text-gray-900 uppercase">
                                             {{ $item->name }}
-                                        </button>
+                                        </a>
                                     </div>
                                 </div>
                             </td>

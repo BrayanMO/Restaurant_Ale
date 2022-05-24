@@ -9,9 +9,15 @@ use App\Models\Table;
 class MesaController extends Controller
 {
 
-    protected $listeners = ['show'];
-
     public function show(Table $mesa){
-        return view('mesas.show', compact('mesa'));
+        if ($mesa->status == '1') {
+            return view('mesas.show', compact('mesa'));
+        }elseif($mesa->status == '2') {
+            return "ocupado";
+        }else{
+            return "Reservado";
+        }
+
+        // return view('mesas.show', compact('mesa'));
     }
 }
