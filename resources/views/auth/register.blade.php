@@ -12,9 +12,11 @@
         <div class="px-2 text-center pb-2">
             <span class="text-4xl font-sans h-7 w-aut text-gray-500 font-bold pr-1 ">Mi</span>
             <span class="text-4xl font-sans h-7 w-aut text-amber-400 font-bold">Alexia</span>
-
         </div>
-        <hr class="pb-6">
+        <hr class="pb-2">
+        <div class="text-center pb-4">
+            <span class="text-xl font-sans h-7 w-aut text-gray-500 font-bold pr-1 text-center">Registro de Meseros</span>
+        </div>
 
         <x-jet-validation-errors class="mb-4" />
         <form method="POST" action="{{ route('register') }}">

@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\WelcomeController;
 use Illuminate\Auth\Events\Login;
 use App\Http\Controllers\MesaController;
+use App\Http\Livewire\OrderCreate;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,23 +18,19 @@ use App\Http\Controllers\MesaController;
 // Route::post({{ 'login' }});
 Route::middleware(['auth'])->group(function(){
 Route::get('/', WelcomeController::class);
+
+Route::get('mesas/{mesa}', [MesaController::class, 'check'])->name('mesas.show');
+
+// Route::get('orders/{mesa}', [CreateOrder::class, 'show'])->name('orders.create');
+
+Route::get('orders/{order}/{mesa}', [OrderCreate::class, 'show'])->name('orders.create');
+
 });
-
-
-Route::get('mesas/{mesa}', [MesaController::class, 'show'])->name('mesas.show');
-
-Route::get('orders/create', function($id){
-
-})->name('orders.create');
-
-
-
-
 
 
 Route::get('prueba', function () {
    return  \Cart::content();
-});
+})->name('prueba');
 
 
 

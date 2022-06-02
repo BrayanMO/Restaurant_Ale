@@ -2,13 +2,16 @@
 
 namespace App\Http\Livewire;
 
+use App\Models\Table;
 use Livewire\Component;
 use phpDocumentor\Reflection\Types\This;
 use Gloudemans\Shoppingcart\Facades\Cart;
+use App\Models\Order;
 
 class TablaItems extends Component
 {
     protected $listeners = ['render'];
+    public Table $mesa;
 
     public function destroy(){
         Cart::destroy();
@@ -18,6 +21,23 @@ class TablaItems extends Component
         Cart::remove($rowID);
     }
 
+
+    public function create_order(){
+
+        $order = new Order();
+
+        $order->user_id = auth()->user()->id;
+        $order->total = Cart::subtotal();
+        $order->content = Cart::content();
+        $order->table_id = $this->mesa->id;
+
+        $this->mesa->status = 2;
+        $this->mesa->save();
+        $order->save();
+        Cart::destroy();
+        $this->emit('render');
+        return redirect()->route('orders.create', [$order, $this->mesa]);
+    }
 
     public function render()
     {

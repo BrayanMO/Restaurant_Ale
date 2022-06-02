@@ -2,7 +2,7 @@
     <x-table-responsive>
         <div class="flex items-center md:justify-center px-6 py-3 bg-white text-left md:text-center">
             <h1 class="text-lg font-semibold text-gray-700 mr-1">Comanda de Pedido</h1>
-            <x-pedido class="ml-4" size="25"/>
+            <x-pedido class="ml-4" size="25" />
         </div>
 
         @if (Cart::count())
@@ -96,10 +96,10 @@
                         {{ Cart::subtotal() }}
                     </p>
                 </div>
-                <x-jet-danger-button>
+                <x-jet-button wire:click="create_order" wire:loading.attr="disabled"
+                    wire:target="create_order">
                     Enviar Comanda
-                </x-jet-danger-button>
-
+                </x-jet-button>
             </div>
         </div>
     @endif

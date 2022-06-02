@@ -14,6 +14,11 @@ class Table extends Model
 
     protected $guarded = ['id', 'created_at', 'updated_at'];
 
+     // uno a muchos
+     public function orders(){
+        return $this->hasMany(Order::class);
+    }
+    
     // URL AMIGABLES
     public function getRouteKeyName()
     {

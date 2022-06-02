@@ -30,7 +30,7 @@ class CategorySeeder extends Seeder
             [
                 'name' => 'Platos Calientes',
                 'slug' => Str::slug('Platos Calientes'),
-                'icon' => '<i class="fas fa-concierge-bell"></i>v'
+                'icon' => '<i class="fas fa-concierge-bell"></i>'
             ],
             [
                 'name' => 'Bebidas',
