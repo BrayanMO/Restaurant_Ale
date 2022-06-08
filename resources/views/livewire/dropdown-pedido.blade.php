@@ -1,19 +1,11 @@
 <div>
-    <x-jet-dropdown width="96">
-        <x-slot name="trigger">
-            <span class="relative inline-block cursor-pointer mt-2">
-                <x-pedido color="white"/>
-                {{-- <span class="absolute top-0 right-0 inline-flex items-center justify-center px-2 py-1 text-xs font-bold leading-none text-red-100 transform translate-x-1/2 -translate-y-1/2 bg-red-600 rounded-full">99</span> --}}
-                <span class="absolute top-0 right-0 inline-block w-2 h-2 transform translate-x-1/2 -translate-y-1/2 bg-red-600 rounded-full"></span>
-            </span>
-        </x-slot>
+    <a width="96" href="{{ route('orders.index')}}">
+        <x-pedido color="white"/>
 
-        <x-slot name="content">
-            <div class="py-6 px-4">
-                <p class="text-center text-gray-700">
-                    No tiene ningun pedido pendiente. 😊
-                </p>
-            </div>
-        </x-slot>
-    </x-jet-dropdown>
+        @if ($order->count())
+        <span class="absolute top-1 flex-0 inline-flex items-center justify-center ml-3 px-2 py-1 text-xs font-bold leading-none text-red-100 transform translate-x-1/2 bg-red-600 rounded-full">{{$order->count()}}</span>
+        @else
+            <span class="absolute top-1 flex-0 inline-block w-2 h-2 transform translate-x-1/2 -translate-y-1/2 bg-red-600 rounded-full"></span>
+        @endif
+    </a>
 </div>

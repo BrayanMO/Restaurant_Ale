@@ -11,10 +11,11 @@ class Order extends Model
 
     protected $guarded = ['id', 'created_at', 'updated_at', 'status'];
 
-    const PENDIENTE = 1;
-    const ENTREGADO = 2;
-    const PAGADO = 3;
-    const ANULADO = 4;
+    const RECIBIDO = 1;
+    const PREPARANDO = 2;
+    const ENVIADO = 3;
+    const PAGADO = 4;
+    const ANULADO = 5;
 
     // uno a muchos inversa
     public function table(){

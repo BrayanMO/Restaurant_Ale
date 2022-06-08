@@ -19,16 +19,6 @@ class Mesas extends Component
 
         $this->emit('glider');
     }
-    public function asd(Table $tables)
-    {
-        if($tables->status == 1){
-            return redirect()->route('/');
-        }
-        //     $this->order = Order::where('table_id', $tables->id)->first();
-        //     return redirect()->route('prueba');
-        // }
-
-    }
 
     public function render()
     {

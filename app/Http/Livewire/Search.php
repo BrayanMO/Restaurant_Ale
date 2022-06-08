@@ -12,6 +12,7 @@ class Search extends Component
     public $search;
     public $select_price = 1;
     public $open = false;
+
     public function updatedSearch($value)
     {
         if ($value) {
@@ -54,6 +55,7 @@ class Search extends Component
         $this->emit('render');
         $this->open = false;
         $this->search = '';
+        $this->select_price = 1;
     }
 
     public function render()

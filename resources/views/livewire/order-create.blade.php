@@ -1,52 +1,59 @@
-<div class=" bg-repeat bg-scroll " style="background-image: url(../img/full-bloom.png)">
+<div class=" bg-repeat bg-scroll " style="background-image: url(/img/full-bloom.png)">
     <x-app-layout>
         <div class="container">
-            <div class=" flex justify-between rounded-lg shadow-lg px-6 py-4 mt-4 bg-white ">
-                <h1 class="text-gray-600 text-2xl uppercase text-left font-indie font-semibold">Orden</h1>
-                <p class="text-gray-600 text-2xl uppercase text-left font-indie"><span
+            <div class=" flex justify-between items-center rounded-lg shadow-lg px-6 py-4 mt-4 bg-white ">
+                <h1 class="text-gray-600 text-lg md:text-2xl uppercase text-left font-indie font-semibold">Orden</h1>
+                <div class="flex items-center text-center">
+                    <img src="/img/camarero.png" width="34" alt="" class="ml-2">
+                     <p class="text-gray-600 text-lg md:text-lg text-left font-indie font-semibold ml-1">{{ $order->user->name }}</p>
+                </div>
+                <p class="text-gray-600 text-lg md:text-2xl uppercase text-left font-indie"><span
                         class="font-semibold">{{ $order->table->name }}</span>
+
+
+
             </div>
             {{-- prueba --}}
             <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-2 py-4">
-                    <div class="bg-white rounded-lg shadow-lg px-12 py-8 mb-3 flex items-center">
-                        <div class="relative ">
+                    <div class="bg-white rounded-lg shadow-lg px-3 md:px-8 py-8 mb-3 flex items-center">
+                        <div class="relative">
                             <div class="{{ ($order->status >=1 && $order->status !=5) ? 'bg-blue-400' : 'bg-gray-400'}} rounded-full h-12 w-12  flex items-center justify-center">
                                 <i class="fas fa-check text-white"></i>
                             </div>
-                            <div class="absolute -left-1.5 mt0-0.5">
-                                <p>Recibido</p>
+                            <div class="absolute -left-1 mt0-0.5">
+                                <p class="text-sm md:text-md md:font-semibold">Recibido</p>
                             </div>
                         </div>
 
-                        <div class="{{ ($order->status >=2 && $order->status !=5) ? 'bg-blue-400' : 'bg-gray-400'}} h-1 flex-1  mx-2"></div>
+                        <div class="{{ ($order->status >=2 && $order->status !=5) ? 'bg-blue-400' : 'bg-gray-400'}} h-1 flex-1  md:mx-2"></div>
 
-                        <div class="relative ">
+                        <div class="relative">
                             <div class="{{ ($order->status >=2 && $order->status !=5) ? 'bg-blue-400' : 'bg-gray-400'}} rounded-full h-12 w-12  flex items-center justify-center">
                                 <i class="fas fa-utensils text-white"></i>
                             </div>
-                            <div class="absolute  -left-4 mt0-0.5">
-                                <p>Preparando</p>
+                            <div class="absolute  -left-3 mt0-0.5">
+                                <p class="text-sm md:text-md md:font-semibold">Preparando</p>
                             </div>
                         </div>
 
-                        <div class="{{ ($order->status >=3 && $order->status !=5) ? 'bg-blue-400' : 'bg-gray-400'}} h-1 flex-1  mx-2"></div>
+                        <div class="{{ ($order->status >=3 && $order->status !=5) ? 'bg-blue-400' : 'bg-gray-400'}} h-1 flex-1   md:mx-2"></div>
 
                         <div class="relative">
                             <div class="{{ ($order->status >=3 && $order->status !=5) ? 'bg-blue-400' : 'bg-gray-400'}} rounded-full h-12 w-12 flex items-center justify-center">
                                 <i class="fas fa-concierge-bell text-white"></i>
                             </div>
-                            <div class="absolute -left-2 mt0-0.5">
-                                <p>Enviado</p>
+                            <div class="absolute left-.5 mt0-0.5">
+                                <p class="text-sm md:text-md md:font-semibold">Enviado</p>
                             </div>
                         </div>
-                        <div class="{{ ($order->status >=4 && $order->status !=5) ? 'bg-blue-400' : 'bg-gray-400'}} h-1 flex-1  mx-2"></div>
+                        <div class="{{ ($order->status >=4 && $order->status !=5) ? 'bg-blue-400' : 'bg-gray-400'}} h-1 flex-1   md:mx-2"></div>
 
-                        <div class="relative">
+                        <div class="relative ">
                             <div class="{{ ($order->status >=4 && $order->status !=5) ? 'bg-blue-400' : 'bg-gray-400'}} rounded-full h-12 w-12 flex items-center justify-center">
                                 <i class="far fa-money-bill-alt text-white"></i>
                             </div>
-                            <div class="absolute -left-2 mt0-0.5">
-                                <p>Pagado</p>
+                            <div class="absolute -left-.5 mt0-0.5">
+                                <p class="text-sm md:text-md md:font-semibold">Pagado</p>
                             </div>
                         </div>
                     </div>
@@ -94,7 +101,7 @@
                                     </td>
                                     <td class="px-6 py-4 whitespace-nowrap">
                                         <div class="text-sm text-center text-gray-500">
-                                           {{$item->price}}
+                                            {{$item->price}}
                                         </div>
                                     </td>
                                     <td class="px-6 py-4 whitespace-nowrap">
@@ -112,13 +119,15 @@
                         </tbody>
                     </table>
                 </x-table-responsive>
-                <div class="bg-white rounded-lg shadow-lg px-6 py-4 mt-4">
-                    <div>
+                <div class="flex justify-between  items-center bg-white rounded-lg shadow-lg px-6 py-4 mt-4">
                         <p class="text-gray-700">
                             <span class="font-bold text-lg">Total: </span>
                             S/ {{str_replace(",", "", $order->total)}}
                         </p>
-                    </div>
+
+                        <a href="/" class=" px-4 py-2 bg-[#28617A] rounded-lg text-white">
+                            Ir al inicio
+                        </a>
                 </div>
             </div>
         </div>

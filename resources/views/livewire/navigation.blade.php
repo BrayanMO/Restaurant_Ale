@@ -52,14 +52,11 @@
                         </x-jet-dropdown-link>
 
                         <div class="border-t border-gray-100"></div>
-                        {{-- prueba de crear cuenta de mesero --}}
-                        <form method="POST" action="{{ route('register') }}" x-data>
-                            @csrf
-                            <x-jet-dropdown-link href="{{ route('register') }}">
-                                {{ __('Crear cuenta para mesero') }}
-                            </x-jet-dropdown-link>
-                        </form>
-                        {{-- fin de prueba de crear cuenta de mesero --}}
+                        
+                        <x-jet-dropdown-link href="{{ route('admin.index') }}">
+                            Administrador
+                        </x-jet-dropdown-link>
+
                         <div class="border-t border-gray-100"></div>
                         <!-- Authentication -->
                         <form method="POST" action="{{ route('logout') }}" x-data>

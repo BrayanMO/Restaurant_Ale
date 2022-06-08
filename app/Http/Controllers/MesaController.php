@@ -10,16 +10,22 @@ use Gloudemans\Shoppingcart\Facades\Cart;
 class MesaController extends Controller
 {
 
-    public function check(Table $mesa, Order $order){
+    public function check(Order $order, Table $mesa){
         if ($mesa->status == '1') {
+
             return view('mesas.show', compact('mesa'));
         }
-        elseif($mesa->status == '2') {
-            return view('livewire.order-create', compact('mesa', 'order'));
+        elseif($mesa->status == '2'){
+            $order = Order::where('table_id', $mesa->id)
+                            ->first();
+            return redirect()->route('orders.create', [$order, $mesa]);
+        }else{
+            return "Hola";
         }
         // }else{
         //     return "Reservado";
         //
     }
+
 
 }

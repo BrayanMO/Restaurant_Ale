@@ -22,11 +22,12 @@ return new class extends Migration
             $table->foreign('user_id')->references('id')->on('users');
 
             $table->enum('status' , [
-                Order::PENDIENTE,
-                Order::ENTREGADO,
+                Order::RECIBIDO,
+                Order::PREPARANDO,
+                Order::ENVIADO,
                 Order::PAGADO,
                 Order::ANULADO
-            ])->default(Order::PENDIENTE);
+            ])->default(Order::RECIBIDO);
 
             $table->float('total');
             $table->json('content');

@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\WelcomeController;
 use Illuminate\Auth\Events\Login;
 use App\Http\Controllers\MesaController;
+use App\Http\Controllers\OrderController;
 use App\Http\Livewire\OrderCreate;
 /*
 |--------------------------------------------------------------------------
@@ -17,12 +18,13 @@ use App\Http\Livewire\OrderCreate;
 */
 // Route::post({{ 'login' }});
 Route::middleware(['auth'])->group(function(){
-Route::get('/', WelcomeController::class);
+Route::get('/', WelcomeController::class)->name('home');
 
 Route::get('mesas/{mesa}', [MesaController::class, 'check'])->name('mesas.show');
 
 // Route::get('orders/{mesa}', [CreateOrder::class, 'show'])->name('orders.create');
 
+Route::get('orders', [OrderController::class, 'index'])->name('orders.index');
 Route::get('orders/{order}/{mesa}', [OrderCreate::class, 'show'])->name('orders.create');
 
 });
