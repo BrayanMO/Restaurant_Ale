@@ -5,7 +5,7 @@ namespace Database\Factories;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use App\Models\Plate;
 use App\Models\Subcategory;
-
+use Illuminate\Support\Str;
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Plate>
  */
@@ -23,6 +23,7 @@ class PlateFactory extends Factory
 
         return [
             'name' => $name,
+            'slug' => Str::slug($name),
             'price_small' => 25.00,
             'price_medium' => 35.00,
             'price_family' => 45.00,

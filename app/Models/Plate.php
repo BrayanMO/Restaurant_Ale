@@ -18,5 +18,9 @@ class Plate extends Model
         return $this->belongsTo(Subcategory::class);
     }
 
-   
+    public function getRouteKeyName()
+    {
+        return 'slug';
+    }
+
 }

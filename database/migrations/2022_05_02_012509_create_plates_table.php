@@ -17,6 +17,7 @@ return new class extends Migration
         Schema::create('plates', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+            $table->string('slug');
             $table->float('price_small');
             $table->float('price_medium')->nullable();
             $table->float('price_family')->nullable();
