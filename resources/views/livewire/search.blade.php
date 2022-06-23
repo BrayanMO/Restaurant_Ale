@@ -1,4 +1,5 @@
 <div class="flex-1 relative" x-data>
+
     <x-jet-input wire:model="search" type="text" class="w-full "
         placeholder="Agrega a la comanda algún plato y/o bebida 🤠" />
     <button class="absolute top-0 right-0 w-12 h-full bg-[#1d617a] flex items-center justify-center rounded-r-md">
@@ -34,7 +35,7 @@
                 </div>
                 @forelse ($plates as $plate)
                     <section class="bg-white flex text-left py-2 w-full items-center">
-                        <button wire:click="addItem({{ $plate->id }})" wire:loading.attr="disabled"
+                        <button wire:click="addItem({{$plate->id}})" wire:loading.attr="disabled"
                             class="pl-2 flex">
                             <i class="fas fa-plus-circle text-blue-400"></i>
                         </button>

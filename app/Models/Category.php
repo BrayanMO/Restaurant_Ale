@@ -20,4 +20,9 @@ class Category extends Model
     public function plates(){
         return $this->hasManyThrough(Plate::class, Subcategory::class);
     }
+
+    public function getRouteKeyName()
+    {
+        return 'slug';
+    }
 }

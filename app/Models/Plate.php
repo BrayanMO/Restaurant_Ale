@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Request;
 
 class Plate extends Model
 {
@@ -20,7 +21,11 @@ class Plate extends Model
 
     public function getRouteKeyName()
     {
-        return 'slug';
+       if (Request::segment(1) == 'admin' || Request::segment(3) == 'admin.show-plates' || Request::segment(3) == 'admin.edit-plate') {
+           return 'slug';
+       }else{
+           return 'id';
+       }
     }
 
 }

@@ -38,7 +38,7 @@
 <body class="font-sans antialiased">
     <x-jet-banner />
 
-    <div>
+    <div class="min-h-screen bg-cover bg-top" style="background-image: url(/img/bg-createPro.jpg)">
         @livewire('navigation-menu')
         <!-- Page Heading -->
         @if (isset($header))

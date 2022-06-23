@@ -23,6 +23,8 @@ class ShowPlates extends Component
         $plates = Plate::where('name', 'like', '%' . $this->search . '%')
             ->paginate(10);
 
+        
+
         return view('livewire.admin.show-plates', compact('plates'))->layout('layouts.admin');
     }
 }

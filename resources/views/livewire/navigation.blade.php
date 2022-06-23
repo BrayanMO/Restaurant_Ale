@@ -52,7 +52,7 @@
                         </x-jet-dropdown-link>
 
                         <div class="border-t border-gray-100"></div>
-                        
+
                         <x-jet-dropdown-link href="{{ route('admin.index') }}">
                             Administrador
                         </x-jet-dropdown-link>
@@ -96,6 +96,13 @@
                 </span>
 
                 Perfil
+            </a>
+            <a href="{{  route('admin.index') }}" class="py-2 px-4 text-sm flex items-center text-gray-500 hover:bg-[#1d617a] hover:text-white">
+                <span class="flex justify-center w-9">
+                    <i class="fas fa-user-shield"></i>
+                </span>
+
+                Administrador
             </a>
             <a href=""
                  onclick="event.preventDefault();

@@ -12,15 +12,14 @@
     </x-slot>
 
     <div class="container py-12">
+        <div class="px-6 py-4 flex  bg-gradient-to-r from-sky-200 to-indigo-200">
+            <x-jet-input class="w-full"
+                        wire:model="search"
+                        type="text"
+                        placeholder="Ingrese el nombre del plato que desea buscar" />
 
+        </div>
         <x-table-responsive>
-            <div class="px-6 py-4 flex  bg-gradient-to-r from-sky-200 to-indigo-200">
-                <x-jet-input class="w-full"
-                            wire:model="search"
-                            type="text"
-                            placeholder="Ingrese el nombre del plato que desea buscar" />
-
-            </div>
             @if ($plates->count())
 
                 <table class="min-w-full divide-y divide-gray-200">

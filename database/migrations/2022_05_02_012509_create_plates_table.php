@@ -23,9 +23,9 @@ return new class extends Migration
             $table->float('price_family')->nullable();
 
             $table->unsignedBigInteger('subcategory_id');
-            $table->foreign('subcategory_id')->references('id')->on('subcategories');
+            $table->foreign('subcategory_id')->references('id')->on('subcategories')->onDelete('cascade');
 
-            $table->enum('status', [Plate::BORRADOR,Plate::PUBLICADO])->default(Plate::BORRADOR);
+            $table->enum('status', [Plate::BORRADOR,Plate::PUBLICADO])->default(Plate::PUBLICADO);
 
             $table->timestamps();
         });

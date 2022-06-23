@@ -26,29 +26,50 @@ class Search extends Component
     {
         // && $this->id->subcategory->category->id == 4
         if ($this->select_price == 1 || $id->subcategory->category->id == 4 ) {
-            Cart::add([
-                'id' => rand(5, 15453423),
-                'name' => $id->name,
-                'qty' => 1,
-                'price' => $id->price_small,
-                'weight' => 550
-            ]);
+                Cart::add([
+                    'id' => rand(5, 15453423),
+                    'name' => $id->name,
+                    'qty' => 1,
+                    'price' => $id->price_small,
+                    'weight' => 550
+                ]);
         } elseif($this->select_price == 2) {
-            Cart::add([
-                'id' => rand(5, 23423423),
-                'name' => $id->name,
-                'qty' => 1,
-                'price' => $id->price_medium,
-                'weight' => 550
-            ]);
+            if ($id->price_medium == null){
+                Cart::add([
+                    'id' => rand(5, 15453423),
+                    'name' => $id->name,
+                    'qty' => 1,
+                    'price' => $id->price_small,
+                    'weight' => 550
+                ]);
+            }else{
+                Cart::add([
+                    'id' => rand(5, 23423423),
+                    'name' => $id->name,
+                    'qty' => 1,
+                    'price' => $id->price_medium,
+                    'weight' => 550
+                ]);
+            }
+
         }elseif($this->select_price == 3){
-            Cart::add([
-                'id' => rand(5, 2342342),
-                'name' => $id->name,
-                'qty' => 1,
-                'price' => $id->price_family,
-                'weight' => 550
-            ]);
+            if ($id->price_family == null){
+                Cart::add([
+                    'id' => rand(5, 15453423),
+                    'name' => $id->name,
+                    'qty' => 1,
+                    'price' => $id->price_small,
+                    'weight' => 550
+                ]);
+            }else{
+                Cart::add([
+                    'id' => rand(5, 23423423),
+                    'name' => $id->name,
+                    'qty' => 1,
+                    'price' => $id->price_family,
+                    'weight' => 550
+                ]);
+            }
         }
         $this->emitTo('add-plate-cant', 'render');
         $this->emitTo('tabla-items', 'render');
@@ -68,6 +89,9 @@ class Search extends Component
         } else {
             $plates = [];
         }
+        // docentes = nombre, apellido, sexo, dni, aula, rol(admin-docente-alumno)
+        // select  * from docentes where dni = @user where password = @pass where estado = 1
+        // if(user->role == admin){
         return view('livewire.search', compact('plates'));
     }
 }

@@ -4,12 +4,23 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Livewire\Admin\ShowPlates;
 use App\Http\Livewire\Admin\CreatePlate;
+use App\Http\Livewire\Admin\EditPlate;
+use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Livewire\Admin\ShowCategory;
+use App\Http\Controllers\Admin\OrderController;
 
 Route::get('/', ShowPlates::class)->name('admin.index');
 
 Route::get('plates/create', CreatePlate::class)->name('admin.plates.create');
 
-Route::get('plates/{plate}/edit', function(){})->name('admin.plates.edit');
+Route::get('plates/{plate}/edit', EditPlate::class)->name('admin.plates.edit');
+
+Route::get('categories', [CategoryController::class, 'index'])->name('admin.categories.index');
+
+Route::get('categories/{category}', ShowCategory::class)->name('admin.categories.show');
+
+Route::get('orders', [OrderController::class, 'index'])->name('admin.orders.index');
+Route::get('orders/{order}', [OrderController::class, 'show'])->name('admin.orders.show');
 
 
 

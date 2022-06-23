@@ -1,21 +1,27 @@
-<nav x-data="{ open: false }" class="bg-[#1d617a]" border-b border-gray-100">
+<nav x-data="{ open: false }" class="bg-white border-b border-gray-100">
     <!-- Primary Navigation Menu -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex justify-between items-center h-16">
+        <div class="flex justify-between h-16">
             <div class="flex">
                 <!-- Logo -->
                 <div class="flex items-center">
-                    <img class="flex flex-col items-center justify-center h-12 " width="50" src="img/logo.png" alt="">
+                    <img class="flex flex-col items-center justify-center h-12 " width="50" src="../../../img/logo.png" alt="">
                     <a href="/" >
-                        <span class="text-3xl font-sans text-white cursor-pointer font-bold ">Mi </span>
+                        <span class="text-3xl font-sans text-[#1d617a] cursor-pointer font-bold ">Mi </span>
                         <span class="text-3xl font-sans text-amber-400 cursor-pointer font-bold"> Alexia</span>
                     </a>
                 </div>
 
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-jet-nav-link class="text-white" href="" :active="request()->routeIs('dashboard')">
-                        {{ __('Dashboard') }}
+                    <x-jet-nav-link  href="{{route('admin.index')}}" :active="request()->routeIs('admin.index')">
+                        Platos
+                    </x-jet-nav-link>
+                    <x-jet-nav-link  href="{{route('admin.categories.index')}}" :active="request()->routeIs('admin.categories.*')">
+                        Categorias
+                    </x-jet-nav-link>
+                    <x-jet-nav-link  href="{{route('admin.orders.index')}}" :active="request()->routeIs('admin.orders.*')">
+                        Ordenes
                     </x-jet-nav-link>
                 </div>
             </div>
@@ -139,8 +145,14 @@
     <!-- Responsive Navigation Menu -->
     <div :class="{'block': open, 'hidden': ! open}" class="hidden sm:hidden">
         <div class="pt-2 pb-3 space-y-1">
-            <x-jet-responsive-nav-link href="" :active="request()->routeIs('dashboard')">
-                {{ __('Dashboard') }}
+            <x-jet-responsive-nav-link href="{{route('admin.index')}}" :active="request()->routeIs('admin.index')">
+                Platos
+            </x-jet-responsive-nav-link>
+            <x-jet-responsive-nav-link  href="{{route('admin.categories.index')}}" :active="request()->routeIs('admin.categories.*')">
+                Categorias
+            </x-jet-responsive-nav-link>
+            <x-jet-responsive-nav-link  href="{{route('admin.orders.index')}}" :active="request()->routeIs('admin.orders.*')">
+                Ordenes
             </x-jet-responsive-nav-link>
         </div>
 

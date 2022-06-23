@@ -10,6 +10,7 @@ use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 class OrderCreate extends Component
 {
     use AuthorizesRequests;
+    protected $listeners = ['render'];
     // public $order;
     public function show(Order $order, Table $mesa){
         $items = json_decode($order->content);
