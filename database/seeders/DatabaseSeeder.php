@@ -17,11 +17,11 @@ class DatabaseSeeder extends Seeder
         // \App\Models\User::factory(10)->create();
 
         $this->call(UserSeeder::class);
-        $this->call(CategorySeeder::class);
-        $this->call(SubcategorySeeder::class);
+        // $this->call(CategorySeeder::class);
+        // $this->call(SubcategorySeeder::class);
 
-        $this->call(PlateSeeder::class);
-        $this->call(TableSeeder::class);
+        // $this->call(PlateSeeder::class);
+        // $this->call(TableSeeder::class);
 
 
     }
