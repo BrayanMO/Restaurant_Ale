@@ -4,12 +4,12 @@
     <div class="flex justify-around">
         <label class="mr-6">
             <input wire:model.defer="status" type="radio" name="status" value="1">
-            Marcar producto como borrador
+            Marcar plato como borrador
         </label>
 
         <label>
             <input wire:model.defer="status" type="radio" name="status" value="2">
-            Marcar producto como publicado
+            Marcar plato como publicado
         </label>
     </div>
 

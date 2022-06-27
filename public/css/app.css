@@ -1115,6 +1115,9 @@ select {
 .mb-12 {
   margin-bottom: 3rem;
 }
+.mt-20 {
+  margin-top: 5rem;
+}
 .mb-20 {
   margin-bottom: 5rem;
 }
@@ -1423,6 +1426,9 @@ select {
 }
 .gap-1 {
   gap: 0.25rem;
+}
+.gap-3 {
+  gap: 0.75rem;
 }
 .space-x-8 > :not([hidden]) ~ :not([hidden]) {
   --tw-space-x-reverse: 0;
@@ -1851,6 +1857,9 @@ select {
 .pt-8 {
   padding-top: 2rem;
 }
+.pb-8 {
+  padding-bottom: 2rem;
+}
 .pb-2 {
   padding-bottom: 0.5rem;
 }
@@ -2234,10 +2243,6 @@ select {
   --tw-text-opacity: 1;
   color: rgb(17 24 39 / var(--tw-text-opacity));
 }
-.hover\:text-indigo-900:hover {
-  --tw-text-opacity: 1;
-  color: rgb(49 46 129 / var(--tw-text-opacity));
-}
 .hover\:text-blue-600:hover {
   --tw-text-opacity: 1;
   color: rgb(37 99 235 / var(--tw-text-opacity));
@@ -2249,6 +2254,10 @@ select {
 .hover\:text-white:hover {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+.hover\:text-indigo-900:hover {
+  --tw-text-opacity: 1;
+  color: rgb(49 46 129 / var(--tw-text-opacity));
 }
 .hover\:underline:hover {
   -webkit-text-decoration-line: underline;
@@ -2710,6 +2719,14 @@ select {
 
   .lg\:grid-cols-5 {
     grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+
+  .lg\:grid-cols-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .lg\:grid-cols-6 {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
   }
 
   .lg\:px-8 {
