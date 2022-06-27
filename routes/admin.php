@@ -8,6 +8,8 @@ use App\Http\Livewire\Admin\EditPlate;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Livewire\Admin\ShowCategory;
 use App\Http\Controllers\Admin\OrderController;
+use App\Http\Controllers\Admin\TableController;
+use App\Http\Livewire\Admin\UserComponent;
 
 Route::get('/', ShowPlates::class)->name('admin.index');
 
@@ -19,8 +21,12 @@ Route::get('categories', [CategoryController::class, 'index'])->name('admin.cate
 
 Route::get('categories/{category}', ShowCategory::class)->name('admin.categories.show');
 
+Route::get('tables', [TableController::class, 'index'])->name('admin.tables.index');
+
 Route::get('orders', [OrderController::class, 'index'])->name('admin.orders.index');
 Route::get('orders/{order}', [OrderController::class, 'show'])->name('admin.orders.show');
+
+Route::get('users', UserComponent::class)->name('admin.users.index');
 
 
 

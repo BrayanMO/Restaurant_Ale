@@ -12,7 +12,7 @@
     </x-slot>
 
     <div class="container py-12">
-        <div class="px-6 py-4 flex  bg-gradient-to-r from-sky-200 to-indigo-200">
+        <div class="px-6 py-4 flex rounded-md bg-gradient-to-r from-sky-200 to-indigo-200">
             <x-jet-input class="w-full"
                         wire:model="search"
                         type="text"

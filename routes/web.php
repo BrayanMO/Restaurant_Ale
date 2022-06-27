@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\WelcomeController;
 use Illuminate\Auth\Events\Login;
 use App\Http\Controllers\MesaController;
+use App\Http\Controllers\MeseroController;
 use App\Http\Controllers\OrderController;
 use App\Http\Livewire\OrderCreate;
 /*
@@ -26,6 +27,8 @@ Route::get('mesas/{mesa}', [MesaController::class, 'check'])->name('mesas.show')
 
 Route::get('orders', [OrderController::class, 'index'])->name('orders.index');
 Route::get('orders/{order}/{mesa}', [OrderCreate::class, 'show'])->name('orders.create');
+
+Route::get('registrarMesero', [MeseroController::class, 'index'])->name('registrarMesero');
 
 });
 

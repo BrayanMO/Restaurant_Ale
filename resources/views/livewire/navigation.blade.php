@@ -46,16 +46,25 @@
                         <div class="block px-4 py-2 text-xs text-gray-400">
                             {{ __('Manage Account') }}
                         </div>
-
                         <x-jet-dropdown-link href="{{ route('profile.show') }}">
                             {{ __('Profile') }}
                         </x-jet-dropdown-link>
 
                         <div class="border-t border-gray-100"></div>
 
-                        <x-jet-dropdown-link href="{{ route('admin.index') }}">
-                            Administrador
-                        </x-jet-dropdown-link>
+                        @role('admin')
+                            <x-jet-dropdown-link href="{{ route('admin.index') }}">
+                                Administrador
+                            </x-jet-dropdown-link>
+                        @endrole
+
+                        @role('admin')
+                        <div class="border-t border-gray-100"></div>
+                            <x-jet-dropdown-link href="{{ route('register') }}">
+                                Crear Mesero
+                            </x-jet-dropdown-link>
+
+                        @endrole
 
                         <div class="border-t border-gray-100"></div>
                         <!-- Authentication -->
@@ -97,13 +106,25 @@
 
                 Perfil
             </a>
-            <a href="{{  route('admin.index') }}" class="py-2 px-4 text-sm flex items-center text-gray-500 hover:bg-[#1d617a] hover:text-white">
-                <span class="flex justify-center w-9">
-                    <i class="fas fa-user-shield"></i>
-                </span>
+            @role('admin')
+                <a href="{{  route('admin.index') }}" class="py-2 px-4 text-sm flex items-center text-gray-500 hover:bg-[#1d617a] hover:text-white">
+                    <span class="flex justify-center w-9">
+                        <i class="fas fa-user-shield"></i>
+                    </span>
 
-                Administrador
-            </a>
+                    Administrador
+                </a>
+            @endrole
+
+            @role('admin')
+                <a href="{{  route('register') }}" class="py-2 px-4 text-sm flex items-center text-gray-500 hover:bg-[#1d617a] hover:text-white">
+                    <span class="flex justify-center w-9">
+                        <i class="fas fa-user-shield"></i>
+                    </span>
+
+                    Crear Mesero
+                </a>
+            @endrole
             <a href=""
                  onclick="event.preventDefault();
                     document.getElementById('logout-form').submit();"
