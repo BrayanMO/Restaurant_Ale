@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\WelcomeController;
 use Illuminate\Auth\Events\Login;
 use App\Http\Controllers\MesaController;
-use App\Http\Controllers\MeseroController;
+
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\PedidoController;
 use App\Http\Livewire\OrderCreate;
@@ -32,18 +32,7 @@ Route::get('orders/{order}/{mesa}', [OrderCreate::class, 'show'])->name('orders.
 Route::get('pedido', [PedidoController::class, 'index'])->name('pedido.index');
 Route::get('pedido/{order}', [PedidoController::class, 'show'])->name('pedido.show');
 
-
-Route::get('registrarMesero', [MeseroController::class, 'index'])->name('registrarMesero');
-
 });
-
-
-Route::get('prueba', function () {
-   return  \Cart::content();
-})->name('prueba');
-
-
-
 
 
 
