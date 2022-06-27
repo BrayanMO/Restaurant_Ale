@@ -23,6 +23,6 @@ class Mesas extends Component
     public function render()
     {
 
-        return view('livewire.mesas', compact($this->order));
+        return view('livewire.mesas');
     }
 }
