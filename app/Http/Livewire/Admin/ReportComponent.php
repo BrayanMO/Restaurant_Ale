@@ -29,9 +29,9 @@ class ReportComponent extends Component
                         ->where('status','=', 4)
                         ->sum('total');
         }else{
-            $orders = Order::where('status','=', 4)->whereBetween('created_at', [now()->parse('-5 hours')->format('Y-m-d 00:00:00'), now()->parse('-5 hours')->format('Y-m-d 23:59:59')])
+            $orders = Order::where('status','=', 4)->whereBetween('created_at', [now()->parse('-5 hour')->format('Y-m-d 00:00:00'), now()->parse('-5 hour')->format('Y-m-d 23:59:59')])
                         ->paginate(10);
-            $this->sumtotal = Order::where('status','=', 4)->whereBetween('created_at', [now()->parse('-5 hours')->format('Y-m-d 00:00:00'), now()->parse('-5 hours')->format('Y-m-d 23:59:59')])
+            $this->sumtotal = Order::where('status','=', 4)->whereBetween('created_at', [now()->parse('-5 hour')->format('Y-m-d 00:00:00'), now()->parse('-5 hour')->format('Y-m-d 23:59:59')])
                             ->sum('total');
         }
         $sumtotal =$this->sumtotal;
