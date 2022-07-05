@@ -83,7 +83,7 @@
                                     <span>
                                         Orden: {{$order->id}}
                                         <br>
-                                        {{$order->created_at->modify('-5 hours')->format('d/m/Y g:i a')}}
+                                        {{$order->created_at->modify('-6 hours')->format('d/m/Y g:i a')}}
                                     </span>
                                 </div>
                                 <div class="text-right">
