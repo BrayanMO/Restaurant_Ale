@@ -41,7 +41,7 @@
 <div class="md:hidden py-20">
     <div class="flex items-center bg-opacity-70 bg-amber-400 rounded-lg shadow-lg px-6 py-4 mb-4">
         <h1 class="text-xl uppercase font-semibold font-sans text-white text-left">
-            FECHA: {{ Date::now()->locale('es')->format('l j F') }}
+            FECHA: {{ Date::now()->locale('es')->parse('-1 Day')->format('l j F') }}
         </h1>
     </div>
     <div class="flex items-center bg-blue-500 bg-opacity-70 rounded-lg shadow-lg px-6 py-4">
