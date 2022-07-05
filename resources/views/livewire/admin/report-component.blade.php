@@ -8,7 +8,7 @@
     <!-- This example requires Tailwind CSS v2.0+ -->
     <div class="container py-12 grid-cols-2">
         {{now()->modify('-5 hours')}}
-        {{now()->parse('-5 hours')}}
+        {{now()->parse('-5 hours', '-1 Day')}}
         {{now()}}
         <x-table-responsive>
             <div class="grid grid-cols-4 gap-6 mb-4 px-10 bg-white">
