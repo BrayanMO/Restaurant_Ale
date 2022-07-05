@@ -13,11 +13,9 @@ class ReportpdfController extends Controller
     public function pdfventasall(){
         $fecha_inicio=null;
         $fecha_fin=null;
-        $orders = Order::where('status','<>', 1)
-                ->where('status','<>', 5)
+        $orders = Order::where('status','=', 4)
                 ->get();
-        $sumtotal = Order::where('status','<>', 1)
-                ->where('status','<>', 5)
+        $sumtotal = Order::where('status','=', 4)
                 ->get()
                 ->sum('total');
         $pdf = PDF::loadView('pdf.ventas', compact('orders', 'fecha_inicio', 'fecha_fin','sumtotal'));
@@ -28,13 +26,11 @@ class ReportpdfController extends Controller
     {
         $fi = Carbon::parse($fecha_inicio)->format('Y-m-d 00:00:00');
             $ff = Carbon::parse($fecha_fin)->format('Y-m-d 23:59:59');
-            $orders = Order::where('status','<>', 1)
-                        ->where('status','<>', 5)
+            $orders = Order::where('status','=', 4)
                         ->wherebetween('created_at', [$fi, $ff])
                         ->paginate(10);
             $sumtotal = Order::whereBetween('created_at', [$fi, $ff])
-                        ->where('status','<>', 5)
-                        ->where('status','<>', 1)
+                        ->where('status','=', 4)
                         ->sum('total');
         $pdf = PDF::loadView('pdf.ventas', compact('orders', 'fecha_inicio', 'fecha_fin','sumtotal'));
         return $pdf->stream('pdfventas.pdf');
