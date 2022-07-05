@@ -135,7 +135,7 @@
         </x-slot>
 
         <x-slot name="footer">
-            <x-jet-button wire:click="update" wire:loading.attr="disabled" wire:target="update">
+            <x-jet-button class="cursor-pointer" wire:click="update" wire:loading.attr="disabled" wire:target="update">
                 Actualizar
             </x-jet-button>
         </x-slot>
