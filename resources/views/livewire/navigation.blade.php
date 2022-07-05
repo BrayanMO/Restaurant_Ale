@@ -57,14 +57,6 @@
                             </x-jet-dropdown-link>
                         @endrole
 
-                        @role('admin')
-                        <div class="border-t border-gray-100"></div>
-                            <x-jet-dropdown-link href="{{ route('registere') }}">
-                                Crear Mesero
-                            </x-jet-dropdown-link>
-
-                        @endrole
-
                         @role('cocina')
                         <div class="border-t border-gray-100"></div>
                             <x-jet-dropdown-link href="{{ route('pedido.index') }}">
@@ -120,16 +112,6 @@
                     </span>
 
                     Administrador
-                </a>
-            @endrole
-
-            @role('admin')
-                <a href="{{  route('register') }}" class="py-2 px-4 text-sm flex items-center text-gray-500 hover:bg-[#1d617a] hover:text-white">
-                    <span class="flex justify-center w-9">
-                        <i class="fas fa-user-shield"></i>
-                    </span>
-
-                    Crear Mesero
                 </a>
             @endrole
             @role('cocina')

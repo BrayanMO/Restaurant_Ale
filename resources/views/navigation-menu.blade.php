@@ -130,7 +130,7 @@
                                 {{ __('Profile') }}
                             </x-jet-dropdown-link>
                             <div class="border-t border-gray-100"></div>
-                            <x-jet-dropdown-link href="{{ route('register') }}">
+                            <x-jet-dropdown-link href="{{ route('registrarMesero') }}">
                                 Crear Mesero
                             </x-jet-dropdown-link>
                             @if (Laravel\Jetstream\Jetstream::hasApiFeatures())
@@ -188,7 +188,7 @@
             <x-jet-responsive-nav-link href="{{ route('admin.users.index') }}" :active="request()->routeIs('admin.users.index')">
                 Usuarios
             </x-jet-responsive-nav-link>
-            <x-jet-responsive-nav-link href="{{ route('admin.pdf.ventasall') }}" :active="request()->routeIs('admin.pdf.*')">
+            <x-jet-responsive-nav-link href="{{ route('admin.reports.index') }}" :active="request()->routeIs('admin.reports.*')">
                 Reportes
             </x-jet-responsive-nav-link>
         </div>
@@ -215,7 +215,7 @@
                     {{ __('Profile') }}
                 </x-jet-responsive-nav-link>
                 <div class="border-t border-gray-100"></div>
-                <x-jet-responsive-nav-link href="{{ route('register') }}" :active="request()->routeIs('register')">
+                <x-jet-responsive-nav-link href="{{ route('RegistrarMesero') }}">
                     {{ ('Crear Mesero') }}
                 </x-jet-responsive-nav-link>
                 @if (Laravel\Jetstream\Jetstream::hasApiFeatures())

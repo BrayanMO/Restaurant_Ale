@@ -1,6 +1,5 @@
 @role('admin')
     <x-guest-layout>
-
         <x-jet-authentication-card>
             <x-slot name="logo">
                 <div class="container md:flex md:items-center md:justify-center ">
@@ -71,6 +70,5 @@
                 </div>
             </form>
         </x-jet-authentication-card>
-
     </x-guest-layout>
 @endrole
