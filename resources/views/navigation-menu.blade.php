@@ -215,7 +215,7 @@
                     {{ __('Profile') }}
                 </x-jet-responsive-nav-link>
                 <div class="border-t border-gray-100"></div>
-                <x-jet-responsive-nav-link href="{{ route('RegistrarMesero') }}">
+                <x-jet-responsive-nav-link href="{{ route('registrarMesero') }}">
                     {{ ('Crear Mesero') }}
                 </x-jet-responsive-nav-link>
                 @if (Laravel\Jetstream\Jetstream::hasApiFeatures())
