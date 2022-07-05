@@ -87,7 +87,7 @@
                                     <td class="px-6 py-4 whitespace-nowrap">
                                         <div class="text-sm text-gray-900 placeholder="AA-MM-DD">
 
-                                            {{\Carbon\Carbon::parse($order->created_at)->format('Y-m-d H:i:s')}}
+                                            {{\Carbon\Carbon::parse($order->created_at)->parse('-5 hours')->format('Y-m-d H:i:s')}}
                                         </div>
                                     </td>
                                     <td class="px-6 py-4 whitespace-nowrap">
