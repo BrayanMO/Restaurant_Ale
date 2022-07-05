@@ -13,7 +13,7 @@ class MesaController extends Controller
     public function check(Order $order, Table $mesa){
         if ($mesa->status == '1') {
 
-            return view('Mesas.show', compact('mesa'));
+            return view('mesas.show', compact('mesa'));
         }
         elseif($mesa->status == '2'){
             $order = Order::where('table_id', $mesa->id)

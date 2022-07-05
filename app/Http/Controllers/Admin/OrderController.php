@@ -26,12 +26,12 @@ class OrderController extends Controller
         $pagado = Order::where('status', 4)->whereBetween('created_at', [now()->parse('-1 day', '+19 Hours')->format('Y-m-d 00:00:00'), now()->parse('-1 day', '+19 Hours')->format('Y-m-d 23:59:59')])->count();
         $anulado = Order::where('status', 5)->whereBetween('created_at', [now()->parse('-1 day', '+19 Hours')->format('Y-m-d 00:00:00'), now()->parse('-1 day', '+19 Hours')->format('Y-m-d 23:59:59')])->count();
 
-        return view('admin.orders.index', compact('orders', 'pendiente', 'preparando', 'enviado', 'pagado', 'anulado'));
+        return view('Admin.orders.index', compact('orders', 'pendiente', 'preparando', 'enviado', 'pagado', 'anulado'));
     }
 
     public function show(Order $order)
     {
-        return view('admin.orders.show', compact('order'));
+        return view('Admin.orders.show', compact('order'));
     }
 
 }
