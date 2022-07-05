@@ -61,6 +61,7 @@ class CreateTable extends Component
         Table::create([
             'name' => $this->createForm['name'],
             'slug' => $this->createForm['slug'],
+            'created_at' => now()->modify('-5 hours')
         ]);
 
         $this->reset('createForm');

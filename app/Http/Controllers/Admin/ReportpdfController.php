@@ -13,7 +13,7 @@ class ReportpdfController extends Controller
     public function pdfventasall(){
         $fecha_inicio=null;
         $fecha_fin=null;
-        $orders = Order::where('status','=', 4)->whereBetween('created_at', [now()->modify('-1 Day', '-5 hours')->format('Y-m-d 00:00:00'), now()->modify('-1 Day', '-5 hours')->format('Y-m-d 23:59:59')])
+        $orders = Order::where('status','=', 4)->whereBetween('created_at', [now()->parse('-5 Hours')->format('Y-m-d 00:00:00'), now()->parse('-5 Hours')->format('Y-m-d 23:59:59')])
                 ->get();
         $sumtotal = Order::where('status','=', 4)
                 ->get()

@@ -30,6 +30,7 @@ class TablaItems extends Component
         $order->total = Cart::subtotal();
         $order->content = Cart::content();
         $order->table_id = $this->mesa->id;
+        $order->created_at = now()->modify('-5 hours');
 
         $this->mesa->status = 2;
         $this->mesa->save();

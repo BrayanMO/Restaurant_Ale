@@ -7,10 +7,6 @@
 
     <!-- This example requires Tailwind CSS v2.0+ -->
     <div class="container py-12 grid-cols-2">
-        {{now()->modify('-5 hours')}}
-        {{now()->parse('-5 hours', '-1 Day')}}
-        {{now()}}
-        <x-table-responsive>
             <div class="grid grid-cols-4 gap-6 mb-4 px-10 bg-white">
                 {{-- Fecha Inicial --}}
                 <div>
@@ -46,66 +42,73 @@
                     </div>
                 </div>
             </div>
-            <table class="min-w-full divide-y divide-gray-200">
-                <thead class="bg-gray-50">
-                    <tr>
-                        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                N° Orden
-                        </th>
-                        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                Mesero
-                        </th>
-                        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                Fecha
-                        </th>
-                        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                N° Mesa
-                        </th>
-                        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                Total
-                        </th>
-                    </tr>
-                </thead>
-                    <tbody class="bg-white divide-y divide-gray-200">
+        <x-table-responsive>
+            @if ($orders->count())
+                <table class="min-w-full divide-y divide-gray-200">
+                    <thead class="bg-gray-50">
+                        <tr>
+                            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                    N° Orden
+                            </th>
+                            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                    Mesero
+                            </th>
+                            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                    Fecha
+                            </th>
+                            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                    N° Mesa
+                            </th>
+                            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                    Total
+                            </th>
+                        </tr>
+                    </thead>
+                        <tbody class="bg-white divide-y divide-gray-200">
 
-                        @foreach ($orders as $order)
-                                <tr>
-                                    <td class="px-6 py-4 whitespace-nowrap">
-                                        <div class="flex items-center">
-                                            <div class="ml-4">
-                                                <div class="text-sm font-medium text-gray-900">
-                                                    {{$order->id}}
+                            @foreach ($orders as $order)
+                                    <tr>
+                                        <td class="px-6 py-4 whitespace-nowrap">
+                                            <div class="flex items-center">
+                                                <div class="ml-4">
+                                                    <div class="text-sm font-medium text-gray-900">
+                                                        {{$order->id}}
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                    </td>
-                                    <td class="px-6 py-4 whitespace-nowrap">
-                                        <div class="text-sm text-gray-900">
-                                            {{$order->user->name}}
-                                        </div>
-                                    </td>
-                                    <td class="px-6 py-4 whitespace-nowrap">
-                                        <div class="text-sm text-gray-900 placeholder="AA-MM-DD">
+                                        </td>
+                                        <td class="px-6 py-4 whitespace-nowrap">
+                                            <div class="text-sm text-gray-900">
+                                                {{$order->user->name}}
+                                            </div>
+                                        </td>
+                                        <td class="px-6 py-4 whitespace-nowrap">
+                                            <div class="text-sm text-gray-900 placeholder="AA-MM-DD">
 
-                                            {{\Carbon\Carbon::parse($order->created_at)->parse('-5 hours')->format('Y-m-d H:i:s')}}
-                                        </div>
-                                    </td>
-                                    <td class="px-6 py-4 whitespace-nowrap">
-                                        <div class="text-sm text-gray-900">
-                                           {{ $order->table->name}}
-                                        </div>
-                                    </td>
-                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                                        <div class="text-sm text-gray-900">
-                                            S/ {{$order->total}}
-                                        </div>
-                                    </td>
-                                </tr>
+                                                {{\Carbon\Carbon::parse($order->created_at)->format('Y-m-d H:i:s')}}
+                                            </div>
+                                        </td>
+                                        <td class="px-6 py-4 whitespace-nowrap">
+                                            <div class="text-sm text-gray-900">
+                                            {{ $order->table->name}}
+                                            </div>
+                                        </td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                                            <div class="text-sm text-gray-900">
+                                                S/ {{$order->total}}
+                                            </div>
+                                        </td>
+                                    </tr>
 
-                        @endforeach
-                        <!-- More people... -->
-                    </tbody>
-            </table>
+                            @endforeach
+                            <!-- More people... -->
+                        </tbody>
+                </table>
+            @else
+                <div class="px-6 py-4 bg-gray-100 text-gray-400 font-semibold">
+                    Aún no hay ventas registradas.
+                </div>
+            @endif
             @if ($orders->hasPages())
 
                 <div class="px-6 py-4">

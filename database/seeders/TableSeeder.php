@@ -18,42 +18,51 @@ class TableSeeder extends Seeder
             [
                 'name' => 'Mesa - 1',
                 'slug' => Str::slug('Mesa - 1'),
-                'status' => 1
+                'status' => 1,
+                'created_at' => now()->modify('-5 hours')
+
             ],
             [
                 'name' => 'Mesa - 2',
                 'slug' => Str::slug('Mesa - 2'),
-                'status' => 1
+                'status' => 1,
+                'created_at' => now()->modify('-5 hours')
             ],
             [
                 'name' => 'Mesa - 3',
                 'slug' => Str::slug('Mesa - 3'),
-                'status' => 1
+                'status' => 1,
+                'created_at' => now()->modify('-5 hours')
             ],
             [
                 'name' => 'Mesa - 4',
                 'slug' => Str::slug('Mesa - 4'),
-                'status' => 1
+                'status' => 1,
+                'created_at' => now()->modify('-5 hours')
             ],
             [
                 'name' => 'Mesa - 5',
                 'slug' => Str::slug('Mesa - 5'),
-                'status' => 1
+                'status' => 1,
+                'created_at' => now()->modify('-5 hours')
             ],
             [
                 'name' => 'Mesa - 6',
                 'slug' => Str::slug('Mesa - 6'),
-                'status' => 1
+                'status' => 1,
+                'created_at' => now()->modify('-5 hours')
             ],
             [
                 'name' => 'Mesa - 7',
                 'slug' => Str::slug('Mesa - 7'),
-                'status' => 1
+                'status' => 1,
+                'created_at' => now()->modify('-5 hours')
             ],
             [
                 'name' => 'Mesa - 8',
                 'slug' => Str::slug('Mesa - 8'),
-                'status' => 1
+                'status' => 1,
+                'created_at' => now()->modify('-5 hours')
             ],
 
         ];
