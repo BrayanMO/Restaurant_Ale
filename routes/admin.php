@@ -8,7 +8,9 @@ use App\Http\Livewire\Admin\EditPlate;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Livewire\Admin\ShowCategory;
 use App\Http\Controllers\Admin\OrderController;
+use App\Http\Controllers\Admin\ReportpdfController;
 use App\Http\Controllers\Admin\TableController;
+use App\Http\Livewire\Admin\ReportComponent;
 use App\Http\Livewire\Admin\UserComponent;
 
 Route::get('/', ShowPlates::class)->name('admin.index');
@@ -27,6 +29,12 @@ Route::get('orders', [OrderController::class, 'index'])->name('admin.orders.inde
 Route::get('orders/{order}', [OrderController::class, 'show'])->name('admin.orders.show');
 
 Route::get('users', UserComponent::class)->name('admin.users.index');
+
+Route::get('reports', ReportComponent::class)->name('admin.reports.index');
+
+Route::get('pdf/ventas/',[ReportpdfController::class,'pdfventasall'])->name('admin.pdf.ventasall');
+
+Route::get('pdf/ventas/{fecha_inicio}/{fecha_fin}',[ReportpdfController::class,'pdfventasfecha']);
 
 
 
