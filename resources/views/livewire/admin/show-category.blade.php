@@ -115,7 +115,7 @@
         </x-slot>
 
         <x-slot name="footer">
-            <x-jet-danger-button wire:click="update" wire:loading.attr="disabled" wire:target="update">
+            <x-jet-danger-button class="cursor-pointer" wire:click="update" wire:loading.attr="disabled" wire:target="update">
                 Actualizar
             </x-jet-danger-button>
         </x-slot>
