@@ -59,7 +59,7 @@
 
                         @role('admin')
                         <div class="border-t border-gray-100"></div>
-                            <x-jet-dropdown-link href="{{ route('register') }}">
+                            <x-jet-dropdown-link href="{{ route('registere') }}">
                                 Crear Mesero
                             </x-jet-dropdown-link>
 
