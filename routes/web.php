@@ -9,7 +9,8 @@ use App\Http\Controllers\MesaController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\PedidoController;
 use App\Http\Livewire\OrderCreate;
-
+use Laravel\Fortify\Features;
+use Laravel\Fortify\Http\Controllers\RegisteredUserController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -34,6 +35,17 @@ Route::get('orders/{order}/{mesa}', [OrderCreate::class, 'show'])->name('orders.
 Route::get('pedido', [PedidoController::class, 'index'])->name('pedido.index');
 Route::get('pedido/{order}', [PedidoController::class, 'show'])->name('pedido.show');
 Route::get('registere', [Loginer::class, 'index'])->name('registere');
+
+    // Verification
+    if (Features::enabled(Features::registration())) {
+        Route::get('/register', [RegisteredUserController::class, 'create'])
+            // ->middleware(['guest:'.config('fortify.guard')])
+            ->name('register');
+
+        Route::post('/register', [RegisteredUserController::class, 'store']);
+            // ->middleware(['guest:'.config('fortify.guard')]);
+    }
+
 });
 
 
