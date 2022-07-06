@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Loginer;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\WelcomeController;
 use Illuminate\Auth\Events\Login;
@@ -8,7 +9,7 @@ use App\Http\Controllers\MesaController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\PedidoController;
 use App\Http\Livewire\OrderCreate;
-use App\Http\Controllers\Loginer;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -32,7 +33,7 @@ Route::get('orders/{order}/{mesa}', [OrderCreate::class, 'show'])->name('orders.
 
 Route::get('pedido', [PedidoController::class, 'index'])->name('pedido.index');
 Route::get('pedido/{order}', [PedidoController::class, 'show'])->name('pedido.show');
-Route::get('registere', function(){ return view('auth.register'); })->name('registere');
+Route::get('registere', [Loginer::class, 'index'])->name('registere');
 });
 
 
