@@ -130,9 +130,6 @@
                                 {{ __('Profile') }}
                             </x-jet-dropdown-link>
                             <div class="border-t border-gray-100"></div>
-                            <x-jet-dropdown-link href="{{ route('registrarMesero') }}">
-                                Crear Mesero
-                            </x-jet-dropdown-link>
                             @if (Laravel\Jetstream\Jetstream::hasApiFeatures())
                                 <x-jet-dropdown-link href="{{ route('api-tokens.index') }}">
                                     {{ __('API Tokens') }}
@@ -215,9 +212,6 @@
                     {{ __('Profile') }}
                 </x-jet-responsive-nav-link>
                 <div class="border-t border-gray-100"></div>
-                <x-jet-responsive-nav-link href="{{ route('registrarMesero') }}">
-                    {{ ('Crear Mesero') }}
-                </x-jet-responsive-nav-link>
                 @if (Laravel\Jetstream\Jetstream::hasApiFeatures())
 
                     <x-jet-responsive-nav-link href="{{ route('api-tokens.index') }}" :active="request()->routeIs('api-tokens.index')">

@@ -36,7 +36,7 @@ Route::get('pdf/ventas/',[ReportpdfController::class,'pdfventasall'])->name('adm
 
 Route::get('pdf/ventas/{fecha_inicio}/{fecha_fin}',[ReportpdfController::class,'pdfventasfecha']);
 
-Route::get('registrarMesero', function(){ return view ('auth.register'); })->name('registrarMesero');
+
 
 
 

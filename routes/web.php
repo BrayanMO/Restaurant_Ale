@@ -8,6 +8,7 @@ use App\Http\Controllers\MesaController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\PedidoController;
 use App\Http\Livewire\OrderCreate;
+use App\Http\Controllers\Loginer;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -31,7 +32,7 @@ Route::get('orders/{order}/{mesa}', [OrderCreate::class, 'show'])->name('orders.
 
 Route::get('pedido', [PedidoController::class, 'index'])->name('pedido.index');
 Route::get('pedido/{order}', [PedidoController::class, 'show'])->name('pedido.show');
-
+Route::get('registrar', [Loginer::class, 'index'])->name('registrar');
 
 });
 
