@@ -32,7 +32,7 @@ Route::get('orders/{order}/{mesa}', [OrderCreate::class, 'show'])->name('orders.
 
 Route::get('pedido', [PedidoController::class, 'index'])->name('pedido.index');
 Route::get('pedido/{order}', [PedidoController::class, 'show'])->name('pedido.show');
-Route::get('registrar', [Loginer::class, 'index'])->name('registrar');
+Route::get('registrar', function(){return view('auth.register');})->name('registrar');
 
 });
 
