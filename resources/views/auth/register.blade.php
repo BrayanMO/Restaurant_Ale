@@ -1,4 +1,4 @@
-<x-app-layout>
+<x-guest-layout>
     <x-jet-authentication-card>
         <x-slot name="logo">
             <div class="container md:flex md:items-center md:justify-center ">
@@ -56,7 +56,7 @@
                         </div>
                     </x-jet-label>
                 </div>
-                @endif
+             @endif
 
                 <div class="flex items-center justify-end mt-4">
                     <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('login') }}">
@@ -69,6 +69,6 @@
                 </div>
         </form>
     </x-jet-authentication-card>
-</x-app-layout>
+</x-guest-layout>
 
 
