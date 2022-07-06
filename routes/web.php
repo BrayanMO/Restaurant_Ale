@@ -36,7 +36,7 @@ Route::get('pedido', [PedidoController::class, 'index'])->name('pedido.index');
 Route::get('pedido/{order}', [PedidoController::class, 'show'])->name('pedido.show');
 Route::get('registere', [Loginer::class, 'index'])->name('registere');
 
-    // Verification
+    // Registration
     if (Features::enabled(Features::registration())) {
         Route::get('/register', [RegisteredUserController::class, 'create'])
             // ->middleware(['guest:'.config('fortify.guard')])
