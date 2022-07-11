@@ -8,7 +8,7 @@ class PedidoController extends Controller
 {
     public function index()
     {
-        $orders = Order::query()->whereBetween('created_at', [now()->parse('-5 Hours')->format('Y-m-d 00:00:00'), now()->parse('-5 Hours')->format('Y-m-d 23:59:59')]);
+        $orders = Order::query()->where('status', '<>', 4)->whereBetween('created_at', [now()->parse('-5 Hours')->format('Y-m-d 00:00:00'), now()->parse('-5 Hours')->format('Y-m-d 23:59:59')]);
 
 
         if (request('status')) {
