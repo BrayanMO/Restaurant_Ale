@@ -89,9 +89,6 @@ class Search extends Component
         } else {
             $plates = [];
         }
-        // docentes = nombre, apellido, sexo, dni, aula, rol(admin-docente-alumno)
-        // select  * from docentes where dni = @user where password = @pass where estado = 1
-        // if(user->role == admin){
         return view('livewire.search', compact('plates'));
     }
 }

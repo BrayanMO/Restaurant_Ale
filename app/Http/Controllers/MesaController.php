@@ -16,8 +16,8 @@ class MesaController extends Controller
             return view('Mesas.show', compact('mesa'));
         }
         elseif($mesa->status == '2'){
-            $order = Order::where('table_id', $mesa->id)
-                            ->first();
+            $order = Order::where('table_id', $mesa->id)->orderBy('id', 'desc')->first();
+                            // ->where('status', '<>',4 || '<>', 5);
             return redirect()->route('orders.create', [$order, $mesa]);
         }else{
             return "Hola";

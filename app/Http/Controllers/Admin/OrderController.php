@@ -16,6 +16,7 @@ class OrderController extends Controller
 
         if (request('status')) {
             $orders->where('status', request('status'));
+
         }
 
         $orders=$orders->get();

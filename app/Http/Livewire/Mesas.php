@@ -13,6 +13,7 @@ class Mesas extends Component
     public $mesas = [];
 
 
+
     public function loadPosts()
     {
         $this->mesas = $this->table;

@@ -76,45 +76,5 @@
 
         </div>
     </div>
-    {{-- modal presentacion --}}
-    {{-- <x-jet-dialog-modal wire:model="editForm.open">
-        <x-slot name="title">
-            Elige la presentacion del plato o bebida
-        </x-slot>
 
-        <x-slot name="content">
-            <div x-data="{ select_price: @entangle('select_price') }">
-                <label class="bg-white rounded-lg shadow px-6 py-4 flex items-center mb-4">
-                    <input x-model="select_price" type="radio" value="1" name="select_price" class="text-gray-600">
-                    <span class="ml-2 text-gray-700">
-                        Fuente Chicha
-                    </span>
-                </label>
-
-                <div class="bg-white rounded-lg shadow mb-4">
-                    <label class=" px-6 py-4 flex items-center">
-                        <input x-model="select_price" type="radio" value="2" name="select_price" class="text-gray-600">
-                        <span class="ml-2 text-gray-700">
-                            Fuente Mediana
-                        </span>
-                    </label>
-                </div>
-
-                <div class="bg-white rounded-lg shadow">
-                    <label class=" px-6 py-4 flex items-center">
-                        <input x-model="select_price" type="radio" value="3" name="select_price" class="text-gray-600">
-                        <span class="ml-2 text-gray-700">
-                            Fuente Familiar
-                        </span>
-                    </label>
-                </div>
-            </div>
-        </x-slot>
-
-        <x-slot name="footer">
-            <x-jet-danger-button wire:click="close" wire:loading.attr="disabled">
-                Actualizar
-            </x-jet-danger-button>
-        </x-slot>
-    </x-jet-dialog-modal> --}}
 </div>

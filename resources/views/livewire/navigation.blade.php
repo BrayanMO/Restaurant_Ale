@@ -91,68 +91,71 @@
 
     </div>
 
-    <nav id="navigation-menu"
-        x-show = "open"
-        class="bg-white h-full overflow-y-auto" >
+   <div>
+     <nav id="navigation-menu"
+         x-show = "open"
+         class="bg-white h-full overflow-y-auto" >
          {{-- menu mobil --}}
 
-        {{-- <div class="container bg-gray-50 py-3 mb-2">
-            @livewire('search')
-        </div> --}}
-        <p class="text-gray-500 px-6 mt-4 mb-4 text-center">USUARIOS</p>
+         {{-- <div class="container bg-gray-50 py-3 mb-2">
+             @livewire('search')
+         </div> --}}
 
-        @livewire('pedido-mobil')
+         <p class="text-gray-500 px-6 mt-4 mb-4 text-center">USUARIOS</p>
 
-        @auth
-            <a href="{{ route('profile.show') }}" class="py-2 px-4 text-sm flex items-center text-gray-500 hover:bg-[#1d617a] hover:text-white">
-                <span class="flex justify-center w-9">
-                    <i class="far fa-address-card"></i>
-                </span>
+         @livewire('pedido-mobil')
 
-                Perfil
-            </a>
-            @role('admin')
-                <a href="{{  route('admin.index') }}" class="py-2 px-4 text-sm flex items-center text-gray-500 hover:bg-[#1d617a] hover:text-white">
-                    <span class="flex justify-center w-9">
-                        <i class="fas fa-user-shield"></i>
-                    </span>
+         @auth
+             <a href="{{ route('profile.show') }}" class="py-2 px-4 text-sm flex items-center text-gray-500 hover:bg-[#1d617a] hover:text-white">
+                 <span class="flex justify-center w-9">
+                     <i class="far fa-address-card"></i>
+                 </span>
 
-                    Administrador
-                </a>
-            @endrole
-            @role('admin')
-                <a href="{{  route('register') }}" class="py-2 px-4 text-sm flex items-center text-gray-500 hover:bg-[#1d617a] hover:text-white">
-                    <span class="flex justify-center w-9">
-                        <i class="fas fa-users"></i>
-                    </span>
+                 Perfil
+             </a>
+             @role('admin')
+                 <a href="{{  route('admin.index') }}" class="py-2 px-4 text-sm flex items-center text-gray-500 hover:bg-[#1d617a] hover:text-white">
+                     <span class="flex justify-center w-9">
+                         <i class="fas fa-user-shield"></i>
+                     </span>
 
-                    Crear Meseros
-                </a>
-            @endrole
+                     Administrador
+                 </a>
+             @endrole
+             @role('admin')
+                 <a href="{{  route('register') }}" class="py-2 px-4 text-sm flex items-center text-gray-500 hover:bg-[#1d617a] hover:text-white">
+                     <span class="flex justify-center w-9">
+                         <i class="fas fa-users"></i>
+                     </span>
 
-            @role('cocina')
-                <a href="{{  route('pedido.index') }}" class="py-2 px-4 text-sm flex items-center text-gray-500 hover:bg-[#1d617a] hover:text-white">
-                    <span class="flex justify-center w-9">
-                        <i class="fas fa-clipboard-list"></i>
-                    </span>
+                     Crear Meseros
+                 </a>
+             @endrole
 
-                    Pedidos recibidos
-                </a>
-            @endrole
-            <a href=""
-                 onclick="event.preventDefault();
-                    document.getElementById('logout-form').submit();"
-                 class="py-2 px-4 text-sm flex items-center text-gray-500 hover:bg-[#1d617a] hover:text-white">
-                <span class="flex justify-center w-9">
-                    <i class="fas fa-sign-out-alt"></i>
-                </span>
+             @role('cocina')
+                 <a href="{{  route('pedido.index') }}" class="py-2 px-4 text-sm flex items-center text-gray-500 hover:bg-[#1d617a] hover:text-white">
+                     <span class="flex justify-center w-9">
+                         <i class="fas fa-clipboard-list"></i>
+                     </span>
 
-                Cerrar Sesion
-            </a>
+                     Pedidos recibidos
+                 </a>
+             @endrole
+             <a href=""
+                  onclick="event.preventDefault();
+                     document.getElementById('logout-form').submit();"
+                  class="py-2 px-4 text-sm flex items-center text-gray-500 hover:bg-[#1d617a] hover:text-white">
+                 <span class="flex justify-center w-9">
+                     <i class="fas fa-sign-out-alt"></i>
+                 </span>
 
-            <form id="logout-form" action="{{ route('logout')}}" method="POST" class="hidden">
-                @csrf
-            </form>
-        @endauth
-    </nav>
+                 Cerrar Sesion
+             </a>
+
+             <form id="logout-form" action="{{ route('logout')}}" method="POST" class="hidden">
+                 @csrf
+             </form>
+         @endauth
+     </nav>
+   </div>
 </header>

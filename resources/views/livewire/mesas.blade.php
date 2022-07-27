@@ -1,39 +1,37 @@
 <div wire:init="loadPosts()">
     @if (count($mesas))
-        @auth
-            <div class="glider-contain">
-                <ul class="glider px-2">
-                    @foreach ($table as $tables)
-                        <a href="{{ route('mesas.show', $tables) }}">
-                            <li
-                                class="bg-white hover:opacity-80 rounded-lg shadow  {{ $loop->last ? '' : 'mr-4' }} {{ $tables->status == '1' ? 'bg-blue-300' : '' }} {{ $tables->status == '2' ? 'bg-red-300' : '' }} {{ $tables->status == '3' ? 'bg-amber-300' : '' }} ">
-                                <article>
-                                    <div>
-                                        <div class="flex justify-center">
-                                            <x-tables-img size='200' />
-                                        </div>
-                                        <h1
-                                            class="text-center bg-amber-400 p-4 rounded-b-lg text-[#1d617a] uppercase font-bold text-lg ">
-                                            {{ $tables->name }}</h1>
+        <div class="glider-contain">
+            <ul class="glider px-2">
+                @foreach ($table as $tables)
+                    <a href="{{ route('mesas.show', $tables) }}">
+                        <li
+                            class="bg-white hover:opacity-80 rounded-lg shadow  {{ $loop->last ? '' : 'mr-4' }} {{ $tables->status == '1' ? 'bg-blue-300' : '' }} {{ $tables->status == '2' ? 'bg-red-300' : '' }} {{ $tables->status == '3' ? 'bg-amber-300' : '' }} ">
+                            <article>
+                                <div>
+                                    <div class="flex justify-center">
+                                        <x-tables-img size='200' />
                                     </div>
-                                </article>
-                            </li>
-                        </a>
-                    @endforeach
-                </ul>
+                                    <h1
+                                        class="text-center bg-amber-400 p-4 rounded-b-lg text-[#1d617a] uppercase font-bold text-lg ">
+                                        {{ $tables->name }}</h1>
+                                </div>
+                            </article>
+                        </li>
+                    </a>
+                @endforeach
+            </ul>
 
-                <button aria-label="Previous" class="glider-prev ml-2 ">«</button>
-                <button aria-label="Next" class="glider-next mr-2">»</button>
-                <div role="tablist" class="dots pt-4"></div>
-            </div>
-        @else
-            {{-- animacion de spin --}}
-            <div
-                class="mb-4 h-48 flex justify-center items-center bg-white opacity-50 shadow-xl border border-gray-100 rounded-lg">
-                <div class="rounded animate-spin ease duration-300 w-10 h-10 border-2 border-[#1d617a]"></div>
-            </div>
-        @endif
-    @endauth
+            <button aria-label="Previous" class="glider-prev ml-2 ">«</button>
+            <button aria-label="Next" class="glider-next mr-2">»</button>
+            <div role="tablist" class="dots pt-4"></div>
+        </div>
+    @else
+        {{-- animacion de spin --}}
+        <div
+            class="mb-4 h-48 flex justify-center items-center bg-white opacity-50 shadow-xl border border-gray-100 rounded-lg">
+            <div class="rounded animate-spin ease duration-300 w-10 h-10 border-2 border-[#1d617a]"></div>
+        </div>
+    @endif
 
 </div>
 
