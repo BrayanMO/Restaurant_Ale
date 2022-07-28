@@ -112,7 +112,8 @@
                                     </td>
                                     <td class="px-6 py-4 whitespace-nowrap">
                                         <div class="text-sm text-center text-gray-500">
-                                            {{ $item->price }}
+                                            <span>S/ {{ $item->price }}</span>
+                                          
                                         </div>
                                     </td>
                                     <td class="px-6 py-4 whitespace-nowrap">
@@ -165,5 +166,13 @@
                 </div>
             </div>
         </div>
+        @push('script')
+            <script>
+                Livewire.on('delete', (id, order) => {
+                    console.log('id', 'order');
+                  Livewire.emitTo('delete', id, order);
+                });
+            </script>
+        @endpush
     </x-app-layout>
 </div>
